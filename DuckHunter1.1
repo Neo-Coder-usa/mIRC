@@ -3,9 +3,17 @@
 ; mIRC Version.: mIRC 7.25+
 ; Description..: Event script and command functions that assist with DuckHunt IRC bot games, including a radar notification when a duck is
 ;                present in an unactive chat window. Duck Hunt bot originally by Menz Agitat.
+;                Dual channel duck radar, notifies you when a duck is detected on the channel(s).
+;                Built in shop menu (just use /shop)
+;                HotKeys assigned for !bang (F12), !reload (F11)
+;                Simplified commands like /b (!bang), /r (!reload), /s <id> <target> (!shop [id] [target])
+;                ZombieHunt extension for the variant ZombieHunt bots.
+;                And more!
 ; Version Info.: Version 1.0 - Original rough draft (unavailable)
-;                Version 1.1 - First Beta Release
+;                Version 1.1 - First Beta Release (Added ZombieHunt extension)
 ; Author.......: Neo_Nemesis
+; Instructions.: Copy and paste this script into a new remote file in mIRC. Click okay and allow initialization commands to run. 
+;                MAKE SURE YOU INPUT YOUR CHANNEL AND BOT INFORMATION BELOW IN THE VARIABLES FUNCTION. 
 ; ==========================================================================================================================================
 
 ; #CURRENT USER COMMANDS# ==================================================================================================================
@@ -33,16 +41,16 @@
 alias -l _duckstart {
   	
   ;*** Put the name of Duck Hunt channel here
-  set %duckchan = #computertech
-  set %duckchan2 = #freenode |     ;*** <--- If not using Channel 2 put None here
+  set %duckchan = #Channel 1
+  set %duckchan2 = #Channel 2 |     ;*** <--- If not using Channel 2 put None here
 
   ;*** Put the name of the Duck Hunt bot here
-  set %duckbot = DuckHunt
-  set %duckbot2 = GameWarden |    ;*** <--- If not using Channel 2 put None here
+  set %duckbot = BotName1
+  set %duckbot2 = BotNam2 |    ;*** <--- If not using Channel 2 put None here
 
   ;*** Put the name of the Zombie Hunter bot and channel here
-  set %zombiebot = Z0DIAC |       ;*** <--- If not using Channel Ext put None here
-  set %zombiechan = #nerds |      ;*** <--- If not using Channel Ext put None here
+  set %zombiebot = ExtBotName |       ;*** <--- If not using Channel Ext put None here
+  set %zombiechan = #ExtChannel |      ;*** <--- If not using Channel Ext put None here
 
   ;*** Set your preferences here.
   ;*** RECOMMENDED SETTINGS & DEFAULT: "duck off", "radar on" and "zombie off"
